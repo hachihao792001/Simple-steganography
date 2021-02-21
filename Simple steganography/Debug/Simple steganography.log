@@ -1,0 +1,3 @@
+﻿  Steganography.cpp
+D:\Github\Simple steganography\Simple steganography\Steganography.cpp(99): warning C4715: 'extract': not all control paths return a value
+  Simple steganography.vcxproj -> D:\Github\Simple steganography\Debug\Simple steganography.exe
