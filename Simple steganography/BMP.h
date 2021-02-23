@@ -59,5 +59,3 @@ struct BMPFile {
 bool ReadBMP(char* fileName, BMPFile& output);
 
 void WriteBMP(char* fileName, BMPFile input);
-
-int CharArrToInt(char* cArr);

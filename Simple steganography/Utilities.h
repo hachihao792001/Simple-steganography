@@ -7,6 +7,10 @@ using namespace std;
 #define BLOCK_SIZE 1024
 typedef unsigned char byte;
 
-string decToBin(int dec);
+string decTo8Bit(int dec);
 
-int binToDec(string bin);
+int _8BitToDec(string bin);
+
+char getBitAtPos(int value, int pos);
+
+byte modifyBit(int value, int pos, int toBit);

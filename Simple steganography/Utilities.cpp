@@ -1,6 +1,6 @@
 #include "Utilities.h"
 
-string decToBin(int dec)
+string decTo8Bit(int dec)
 {
 	/*string bin = "";
 	int i = 1;
@@ -19,7 +19,7 @@ string decToBin(int dec)
 	return bitset<8>(dec).to_string();
 }
 
-int binToDec(string bin)
+int _8BitToDec(string bin)
 {
 	/*int dec = 0;
 	int i = 0;
@@ -30,4 +30,16 @@ int binToDec(string bin)
 	return dec;*/
 
 	return bitset<8>(bin).to_ulong();
+}
+
+char getBitAtPos(int value, int pos) {
+	//copied from stackoverflow
+	return ((value >> pos) & 1) + '0';
+}
+
+byte modifyBit(int value, int pos, int toBit)
+{
+	//copied from geeksforgeeks 
+	int mask = 1 << pos;
+	return (value & ~mask) | ((toBit << pos) & mask);
 }

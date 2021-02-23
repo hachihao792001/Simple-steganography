@@ -61,12 +61,3 @@ void WriteBMP(char* fileName, BMPFile input) {
 		cout << "Loi file" << endl;
 	}
 }
-
-int CharArrToInt(char* cArr) {
-	int result;
-	stringstream ss;
-	ss << cArr;
-	ss >> result;
-	ss.clear();
-	return result;
-}

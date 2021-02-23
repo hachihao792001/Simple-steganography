@@ -13,12 +13,14 @@ int main()
 	string bmpFile;
 	BMPFile bmp;
 	int byteNum;
+	byte* fileBytes = nullptr;
+	byte* outputBytes;
 
 	cin >> choice;
 	switch (choice)
 	{
 	case 1:
-		cout << "Nhap duong dan toi file ma ban muon giau vao hinh: ";
+		cout << "\nNhap duong dan toi file ma ban muon giau vao hinh: ";
 		cin.ignore();
 		getline(cin, hideFile);
 
@@ -27,7 +29,6 @@ int main()
 
 		ReadBMP((char*)bmpFile.c_str(), bmp);
 
-		byte* fileBytes;
 		byteNum = GetFileBytes(hideFile, fileBytes);
 
 		//kích thước file + 4 byte để chứa kích thước file > số pixel * (6/8)
@@ -40,22 +41,25 @@ int main()
 		hide(fileBytes, byteNum, bmp);
 
 		WriteBMP((char*)bmpFile.c_str(), bmp);
-		cout << "Hide thanh cong!";
+		cout << "\nHide thanh cong " << byteNum << " bytes!";
+
 		break;
 
 	case 2:
-		cout << "Nhap duong dan toi file hinh bmp: ";
+		cout << "\nNhap duong dan toi file hinh bmp: ";
 		cin.ignore();
 		getline(cin, bmpFile);
 
 		ReadBMP((char*)bmpFile.c_str(), bmp);
 
-		byte* outputBytes;
 		int byteCount = extract(bmp, outputBytes);
-		CreateFileFromBytes("result", outputBytes, byteCount);
+		CreateFileFromBytes("Hidden file", outputBytes, byteCount);
 		delete[] outputBytes;
+		cout << "Extract thanh cong!" << endl;
 
-		cout << "Da tao file result!" << endl;
 		break;
 	}
+
+	cout << endl;
+	system("pause");
 }
