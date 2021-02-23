@@ -35,7 +35,7 @@ int main()
 		//vì mỗi pixel chứa được 6 bit (2 bit mỗi color channel)
 		if ((double)byteNum + 4.0 > (double)bmp.dib.width * (double)bmp.dib.height * 0.75) {
 			cout << "Kich thuoc file qua lon de duoc giau" << endl;
-			return 0;
+			break;
 		}
 
 		hide(fileBytes, byteNum, bmp);
